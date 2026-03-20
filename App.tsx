@@ -1,25 +1,13 @@
 import React from 'react';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import RootNavigator from './src/navigation/RootNavigator';
-import { AppProvider } from './src/providers/AppProvider';
-
-const navigationTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: '#f7f8fa',
-  },
-};
+import PreSignupLandingScreen from './src/components/preSignup/PreSignupLandingScreen';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <AppProvider>
-        <NavigationContainer theme={navigationTheme}>
-          <RootNavigator />
-        </NavigationContainer>
-      </AppProvider>
+      <StatusBar barStyle="dark-content" backgroundColor="#f8fafc" />
+      <PreSignupLandingScreen />
     </SafeAreaProvider>
   );
 }
